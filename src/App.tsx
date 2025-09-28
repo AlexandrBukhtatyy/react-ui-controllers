@@ -21,9 +21,6 @@ function App() {
       {/* Counter example */}
       <Counter controller={countController} />
       <hr />
-      {/* Table example */}
-      <button onClick={() => tableController.clear()}>reset rows outer</button>
-      <Table controller={tableController} />
       {/* Form example */}
       <Form controller={form}>
         {/* 
@@ -39,6 +36,12 @@ function App() {
         <FormField controller={form.controlName} type={FormFieldComponent} resource={}  uploader={}/>
         <FormField controller={form.controlName} type={FormFieldComponent} someComponentProp={}/>
       </Form>
+      <hr />
+      {/* Toolbar example */}
+      <hr />
+      {/* Table example */}
+      <button onClick={() => tableController.clear()}>reset rows outer</button>
+      <Table controller={tableController} />
     </>
   );
 }
