@@ -24,38 +24,23 @@ function App() {
       {/* Table example */}
       <button onClick={() => tableController.clear()}>reset rows outer</button>
       <Table controller={tableController} />
+      {/* Form example */}
+      <Form controller={form}>
+        {/* 
+          TODO: тут нужно наверное отделить контроллер от контрола поля?
+              или привязать после инициализации поля `controlNameСontroller = new FormFieldComponentComtrolle(form.controlName)`
+              Если контроллер не передан то создавать его на уровне самого компонента ? 
+        */}
+        {/* ================================ */}
+        <FormField controller={controlNameСontroller} type={FormFieldComponent} resource={}/>
+        {/* ============== OR ============== */}
+        <FormField controller={form.controlName} type={FormFieldComponent} resource={}/>
+        {/* ================================ */}
+        <FormField controller={form.controlName} type={FormFieldComponent} resource={}  uploader={}/>
+        <FormField controller={form.controlName} type={FormFieldComponent} someComponentProp={}/>
+      </Form>
     </>
   );
 }
-
-// function App() {
-//   const filterForm = new Form(model, schema)
-//   const table = new Table(settings)
-//   const title = computed(() => {
-//     `Some title (${filterForm.currentStep})`
-//   })
-//   const сontentMessage = computed(() => {
-//     return filterForm.erros
-//   })
-//   return (
-//     <>
-//       <Title controller={title}/>
-//       <ContentMessage controller={сontentMessage}/>
-//       <Form controller={form}>
-//        TODO: тут нужно наверное отделить контроллер от контрола поля?
-//              или привязать после инициализации поля `controlNameСontroller = new FormFieldComponentComtrolle(form.controlName)`
-//              Если контроллер не передан то создавать его на уровне самого компонента ?
-//        ================================
-//         <FormField controller={controlNameСontroller} type={FormFieldComponent} resource={}/>
-//        ============== OR ==============
-//         <FormField controller={form.controlName} type={FormFieldComponent} resource={}/>
-//        ================================
-//         <FormField controller={form.controlName} type={FormFieldComponent} resource={}  uploader={}/>
-//         <FormField controller={form.controlName} type={FormFieldComponent} someComponentProp={}/>
-//       </Form>
-//       <Table controller={table} type={TableViewComponent}/>
-//     </>
-//   )
-// }
 
 export default App;
