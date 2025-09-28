@@ -15,7 +15,15 @@ const tableResource = () => {
 function App() {
   useSignals();
   const countController = makeCountController();
-  const tableController = makeTableController({ resource: tableResource });
+  const formModel = {};
+  const formSchema = {};
+  const formController = makeFormController(formModel, formSchema);
+  const toolbarModel = {};
+  const toolbarSchema = {};
+  const toolbarController = makeToolbarController(toolbarModel, toolbarSchema);
+  const tableModel = {};
+  const tableSchema = {};
+  const tableController = makeTableController(tableModel, tableSchema);
   return (
     <>
       {/* Counter example */}
